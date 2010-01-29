@@ -2,7 +2,7 @@ module WxHelper
 
   # this method will load all file.rb files in our ui directory
 	def WxHelper.include_ui
-		ui = File.dirname(__FILE__) + "/../ui"
+    ui = File.join(File.dirname(__FILE__),"..","ui")
 		Dir.foreach(ui) { |f|
 			load "#{ui}/#{f}" if f[-3..-1] == '.rb'
 		}
