@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ruby.rubyproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/ruby-project/1">
+            <name>GuiTemplate</name>
+            <source-roots>
+                <root id="src.psd.dir" name="Photoshop Files"/>
+                <root id="src.tasks.dir" name="Rake Tasks"/>
+                <root id="src.images.dir" name="Image Files"/>
+                <root id="src.icons.dir" name="Icon Files"/>
+                <root id="src.ui.dir" name="User Interface"/>
+                <root id="src.dir"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.spec.dir" name="RSpec Files"/>
+                <root id="test.test.dir" name="Test Files"/>
+            </test-roots>
+        </data>
+    </configuration>
+</project>

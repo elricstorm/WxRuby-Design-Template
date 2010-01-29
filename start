@@ -1,0 +1,31 @@
+# Ruby 1.9.1 template - no require necessary for rubygems
+
+require 'wx'                                                    # Require our GUI library
+require 'pp'                                                    # Require Pretty Print
+#require 'net/http'                                              # Require Net Http
+#require 'uri'                                                   # Require URI
+#require 'cgi'                                                   # Require CGI
+#require 'hpricot'                                               # Require Hpricot
+load File.join(File.dirname(__FILE__),"lib","constants.rb")     # Load our constants
+load File.join(File.dirname(__FILE__),"lib","globals.rb")       # Load our globals
+load File.join(File.dirname(__FILE__),"lib","wxhelper.rb")      # Loads a helper file that can be used for helper methods
+WxHelper.include_ui                                             # Helper loads all rb files in our ui directory
+WxHelper.setup_init                                             # Helper initiates pre-configuration for our App
+load File.join(File.dirname(__FILE__),"lib","main.rb")          # Load our main program
+load File.join(File.dirname(__FILE__),"lib","modules.rb")       # Load our module extensions
+
+# Begin initialization of the App
+class WXTemplate < Wx::App
+  def on_init
+    gui_main = GuiMain.new()
+
+    # Adding a Timer to Pass Threads
+    t = Wx::Timer.new(self, 55)
+    evt_timer(55) { Thread.pass }
+    t.start(20)
+
+    gui_main.show
+  end
+end
+
+WXTemplate.new.main_loop    # Start our Gui
