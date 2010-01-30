@@ -1,18 +1,12 @@
-# Ruby 1.9.1 template - no require necessary for rubygems
-
 require 'wx'                                                    # Require our GUI library
 require 'pp'                                                    # Require Pretty Print
-#require 'net/http'                                              # Require Net Http
-#require 'uri'                                                   # Require URI
-#require 'cgi'                                                   # Require CGI
-#require 'hpricot'                                               # Require Hpricot
-load File.join(File.dirname(__FILE__),"lib","constants.rb")     # Load our constants
-load File.join(File.dirname(__FILE__),"lib","globals.rb")       # Load our globals
-load File.join(File.dirname(__FILE__),"lib","wxhelper.rb")      # Loads a helper file that can be used for helper methods
-WxHelper.include_ui                                             # Helper loads all rb files in our ui directory
-WxHelper.setup_init                                             # Helper initiates pre-configuration for our App
-load File.join(File.dirname(__FILE__),"lib","main.rb")          # Load our main program
-load File.join(File.dirname(__FILE__),"lib","modules.rb")       # Load our module extensions
+require File.join(File.dirname(__FILE__),"lib","constants")     # Require our constants
+require File.join(File.dirname(__FILE__),"lib","globals")       # Require our globals
+require File.join(File.dirname(__FILE__),"lib","wxhelper")      # Requires a helper file that can be used for helper methods
+WxHelper.include_ui                                             # Helper Requires all rb files in our ui directory
+WxHelper.setup_init
+require File.join(File.dirname(__FILE__),"lib","main")          # Require our main program
+require File.join(File.dirname(__FILE__),"lib","modules")       # Require our module extensions
 
 # Begin initialization of the App
 class WXTemplate < Wx::App
@@ -28,4 +22,4 @@ class WXTemplate < Wx::App
   end
 end
 
-WXTemplate.new.main_loop    # Start our Gui
+WXTemplate.new.main_loop                                        # Start our Gui

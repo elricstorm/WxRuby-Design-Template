@@ -4,7 +4,7 @@
 # this class and extend its behaviour there.  
 #
 # Source file: ui/gui_base_classes.xrc 
-# Generated at: 2010-01-28 11:19:55 -0500
+# Generated at: 2010-01-30 17:07:31 -0500
 
 class XrcFrameMain < Wx::Frame
 	

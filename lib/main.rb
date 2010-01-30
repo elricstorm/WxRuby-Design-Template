@@ -1,19 +1,14 @@
 class GuiMain < XrcFrameMain
-
-	def initialize
-    
-		super()
-    
+	def initialize    
+		super()    
     # File Menu - new workspace
     evt_menu( @mb_fm_new, :on_new_workspace )
     # File Menu - close
     evt_menu( @mb_fm_exit, :on_exit )
-
+    # Set Status Bar Text
     self.set_status_text("Idle...",0) 
     self.set_status_text(Time.now.strftime("%B %d, %Y"), 2)
-
 	end
-
 end
 
 # File --> New
@@ -41,9 +36,3 @@ def debug_box(method, variable, value)
     :description => "Method = #{method}\nVariable = #{variable}\nValue = #{value}"
   )
 end
-
-#==============================================================================
-#==============================================================================
-# END
-#==============================================================================
-#==============================================================================
