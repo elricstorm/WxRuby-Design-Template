@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Your App Name</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>Your App Name</h1>
+
+	
+	<div id="main">
+		<h2>GuiTemplate</h2>
+<p>
+This template is a basic GUI Template for use with WxRuby, Netbeans 6.8,
+and DialogBlocks 4.36+.
+</p>
+<table>
+<tr><td valign="top">Author:</td><td>Joel Dezenzio (<a
+href="mailto:jdezenzio@gmail.com">jdezenzio@gmail.com</a>)
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2010
+
+</td></tr>
+</table>
+<h3>Requirements:</h3>
+<ul>
+<li>Ruby 1.9.1
+
+</li>
+<li>Netbeans 6.8
+
+</li>
+<li>Dialogblocks 4.36+
+
+</li>
+<li>WxRuby 2
+
+</li>
+<li>Wx_Sugar gem
+
+</li>
+<li>Rspec, Rcov, Cucumber test gem(s)
+
+</li>
+</ul>
+<h2>Issues</h2>
+<h3>Wx_Sugar</h3>
+<p>
+|
+</p>
+<pre>
+    GEM Related
+</pre>
+<p>
+Ruby 1.9 portability of the wx_sugar gem creates errors that need to be
+changed. Change the following lines of
+wx_sugar/lib/xrc/xrc2ruby_types/outputter.rb: Change line 39 and line 46
+FROM str.each TO str.each_line (save/close)
+</p>
+<pre>
+    Xrcise Related
+</pre>
+<p>
+The xrcise generated ruby file places an xml.load statement for loading xrc
+files. The load statement incorrectly loads from a relative path and not an
+absolute path. This causes complications when porting your ruby app to an
+executable that is unpackaged in a temp directory.
+</p>
+<p>
+To change this, you need to replace any xml.load statements with:
+</p>
+<p>
+xml.load(File.join(File.dirname(<em>FILE</em>),&#8220;ui.xrc&#8220;))
+</p>
+<p>
+Bug has been reported via: <a
+href="http://rubyforge.org/tracker/index.php?func=detail&aid=27762&group_id=35&atid=218">rubyforge.org/tracker/index.php?func=detail&aid=27762&group_id=35&atid=218</a>
+</p>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="LICENSE.html">LICENSE</a></li>
+		
+			<li class="file"><a href="README.html">README</a></li>
+		
+			<li class="file"><a href="lib/ui/ui_xrc.html">ui.xrc</a></li>
+		
+	</ul>
+	
+
+	<h2>Classes/Modules</h2>
+	<ul>
+		
+		<li class="class"><a href="GuiMain.html">GuiMain</a></li>
+		
+		<li class="class"><a href="Object.html">Object</a></li>
+		
+		<li class="class"><a href="XrcFrameMain.html">XrcFrameMain</a></li>
+		
+	</ul>
+
+	<h2>Methods</h2>
+	<ul>
+		
+			<li><a href="GuiMain.html#M000000">::new &mdash; GuiMain</a></li>
+		
+			<li><a href="XrcFrameMain.html#M000005">::new &mdash; XrcFrameMain</a></li>
+		
+			<li><a href="Object.html#M000004">#debug_box &mdash; Object</a></li>
+		
+			<li><a href="Object.html#M000003">#on_about &mdash; Object</a></li>
+		
+			<li><a href="Object.html#M000002">#on_exit &mdash; Object</a></li>
+		
+			<li><a href="Object.html#M000001">#on_new_workspace &mdash; Object</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>

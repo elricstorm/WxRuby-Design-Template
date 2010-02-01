@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxFrame" name="ID_WXFRAME" subclass="XrcFrameMain">
+        <style>wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX</style>
+        <size>700,550</size>
+        <title>Your Program Name</title>
+        <centered>1</centered>
+        <object class="wxMenuBar" name="mb_main">
+            <object class="wxMenu">
+                <label>File</label>
+                <object class="wxMenuItem" name="mb_fm_new">
+                    <label>&amp;New Something...\tCtrl+N</label>
+                </object>
+                <object class="separator">
+                </object>
+                <object class="wxMenuItem" name="mb_fm_exit">
+                    <label>&amp;Exit\tAlt+F4</label>
+                </object>
+            </object>
+        </object>
+        <object class="wxToolBar" name="tb_main">
+            <style>wxTB_FLAT|wxTB_HORIZONTAL</style>
+            <bitmapsize>16,16</bitmapsize>
+        </object>
+        <object class="wxStatusBar" name="status_bar">
+            <tooltip>Status Bar</tooltip>
+            <help>The status bar displays information for elements</help>
+            <font>
+                <size>8</size>
+                <family>swiss</family>
+                <face>Tahoma</face>
+            </font>
+            <style>wxST_SIZEGRIP|wxDOUBLE_BORDER</style>
+            <fields>3</fields>
+            <widths>-2,-2,-1</widths>
+        </object>
+    </object>
+</resource>

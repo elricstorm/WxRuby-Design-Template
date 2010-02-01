@@ -1,6 +1,10 @@
 class GuiMain < XrcFrameMain
 	def initialize    
-		super()    
+		super()
+    # Timer for thread pass
+    t = Wx::Timer.new(self, 55)
+    evt_timer(55) { Thread.pass }
+    t.start(20)
     # File Menu - new workspace
     evt_menu( @mb_fm_new, :on_new_workspace )
     # File Menu - close

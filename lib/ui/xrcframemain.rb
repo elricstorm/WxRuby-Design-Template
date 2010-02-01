@@ -3,8 +3,8 @@
 # recommended that this file is edited directly; instead, inherit from
 # this class and extend its behaviour there.  
 #
-# Source file: ui/gui_base_classes.xrc 
-# Generated at: 2010-01-30 17:07:31 -0500
+# Source file: ui/ui.xrc 
+# Generated at: 2010-02-01 11:00:03 -0500
 
 class XrcFrameMain < Wx::Frame
 	
@@ -15,7 +15,8 @@ class XrcFrameMain < Wx::Frame
 		xml = Wx::XmlResource.get
 		xml.flags = 2 # Wx::XRC_NO_SUBCLASSING
 		xml.init_all_handlers
-		xml.load("ui/gui_base_classes.xrc")
+    xml.load(File.join(File.dirname(__FILE__),"ui.xrc"))
+		#xml.load("ui/ui.xrc")
 		xml.load_frame_subclass(self, parent, "ID_WXFRAME")
 
 		finder = lambda do | x | 

@@ -1,7 +1,41 @@
 == GuiTemplate
 
-Requirements:
+This template is a basic GUI Template for use with WxRuby,
+Netbeans 6.8, and DialogBlocks 4.36+.
 
-Ruby 1.9.1
-Netbeans 6.8
-DialogBlocks 4.36+
+Author::    Joel Dezenzio  (mailto:jdezenzio@gmail.com)
+Copyright:: Copyright (c) 2010 
+
+===Requirements:
+* Ruby 1.9.1
+* Netbeans 6.8
+* Dialogblocks 4.36+
+* WxRuby 2
+* Wx_Sugar gem
+* Rspec, Rcov, Cucumber test gem(s)
+
+== Issues
+
+=== Wx_Sugar
+
+|
+
+    GEM Related
+
+Ruby 1.9 portability of the wx_sugar gem creates errors that need to be changed.
+Change the following lines of wx_sugar/lib/xrc/xrc2ruby_types/outputter.rb:
+Change line 39 and line 46 FROM str.each TO str.each_line (save/close)
+
+    Xrcise Related
+
+The xrcise generated ruby file places an xml.load statement for loading xrc files.
+The load statement incorrectly loads from a relative path and not an absolute path.
+This causes complications when porting your ruby app to an executable that is
+unpackaged in a temp directory.
+
+To change this, you need to replace any xml.load statements with:
+
+xml.load(File.join(File.dirname(__FILE__),"ui.xrc"))
+
+Bug has been reported via:
+http://rubyforge.org/tracker/index.php?func=detail&aid=27762&group_id=35&atid=218
