@@ -12,6 +12,7 @@ Copyright:: Copyright (c) 2010
 * Dialogblocks 4.36+
 * WxRuby 2
 * Wx_Sugar gem
+* Ocra gem
 * Rspec, Rcov, Cucumber test gem(s)
 
 == Issues
@@ -39,3 +40,33 @@ xml.load(File.join(File.dirname(__FILE__),"ui.xrc"))
 
 Bug has been reported via:
 http://rubyforge.org/tracker/index.php?func=detail&aid=27762&group_id=35&atid=218
+
+== Lessons
+
+The lesson files located within are mainly reference files that I'm using on
+WxRuby screencasts I've created.  There's only a few listed here and they have
+no bearing on the template.  You can remove the lessons folder completely if
+you don't want it in your template.
+
+== Rakefile
+
+The rakefile has a lot of commands built into it.  The ones you'll want to
+become more familiar with are the following commands:
+
+* rake (no arguments necessary)
+
+This will automatically have xrcise create your xrcframemain.rb file from XRC
+source.
+
+* rake build
+
+This will automatically have ocra build and create your project for you.  The
+build includes image files(.png), icon files(.ico), xrc files(.xrc), and all
+source files(.rb).  The app is created as a stand-a-lone executable in your
+lib directory.  Keep in mind that you will have to apply the fix for your
+xml.load statement in xrcframemain.rb per the issue fix listed above in order
+to use the .exe file anywhere on a windows machine.
+
+* other rake commands
+
+Use rake --describe or rake --D to see the other commands and what they do.

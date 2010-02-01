@@ -1,0 +1,4 @@
+# The following command is a quick command for outputting the current working
+# ruby path / directories.
+
+ruby -e "puts $:"

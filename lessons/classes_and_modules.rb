@@ -1,3 +1,6 @@
+# Example I built of Modules, Classes, and also shows
+# the use of include and extend.
+
 module Earth
   module Gravity
     module Oxygen
