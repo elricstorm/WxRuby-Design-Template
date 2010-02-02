@@ -82,7 +82,8 @@ end
 desc "Build executable"
 task :build do
   Dir.chdir("lib")
-  sh "ocra app.rb core/*.rb core/modules/*.rb icons/*.ico images/*.png ui/*.xrc"
+  # You can modify this to use --icon path/to/ico/file to load a custom icon.
+  sh "ocra app.rbw core/*.rb core/modules/*.rb icons/*.ico images/*.png ui/*.xrc"
   p "Ocra compile completed."
 end
 
